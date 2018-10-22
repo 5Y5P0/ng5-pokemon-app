@@ -8,7 +8,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 
 @NgModule({
-  imports:      [ 
+  imports:      
+  [ 
     BrowserModule, 
     PokemonsModule, 
     AppRoutingModule 
@@ -16,4 +17,5 @@ import { PageNotFoundComponent } from './page-not-found.component';
   declarations: [ AppComponent, PageNotFoundComponent ],
   bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }

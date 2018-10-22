@@ -6,7 +6,6 @@ import { PokemonsService } from './pokemons.service';
 @Component({
 	selector: 'detail-pokemon',
 	templateUrl: './app/pokemons/detail-pokemon.component.html',
-	providers: [PokemonsService]
 })
 export class DetailPokemonComponent implements OnInit {
 
@@ -23,6 +22,12 @@ export class DetailPokemonComponent implements OnInit {
 
 	goBack(): void {
         this.router.navigate(['/pokemons']);
+        //window.history.back();
+	}
+
+	goEdit(pokemon: Pokemon): void {
+		let link = ['/pokemon/edit', pokemon.id];
+		this.router.navigate(link);
         //window.history.back();
 	}
 

@@ -8,8 +8,7 @@ import { PokemonsService } from './pokemons.service'
 
 @Component({
   selector: 'listPokemon',
-  templateUrl: './app/pokemons/list-pokemon.component.html',
-  providers: [PokemonsService]
+  templateUrl: './app/pokemons/list-pokemon.component.html'
 })
 
 export class ListPokemonComponent implements OnInit { 

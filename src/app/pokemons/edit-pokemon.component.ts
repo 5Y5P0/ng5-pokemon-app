@@ -11,7 +11,7 @@ import { PokemonsService } from './pokemons.service';
 			<img *ngIf="pokemon" [src]="pokemon.picture"/>
 		</p>
     <pokemon-form [pokemon]="pokemon"></pokemon-form>
-  `,
+  `
 })
 export class EditPokemonComponent implements OnInit {
 

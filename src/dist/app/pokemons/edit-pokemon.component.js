@@ -25,7 +25,7 @@ var EditPokemonComponent = (function () {
     EditPokemonComponent = __decorate([
         core_1.Component({
             selector: 'edit-pokemon',
-            template: "\n    <h2 class=\"header center\">Editer {{ pokemon?.name }}</h2>\n\t\t<p class=\"center\">\n\t\t\t<img *ngIf=\"pokemon\" [src]=\"pokemon.picture\"/>\n\t\t</p>\n    <pokemon-form [pokemon]=\"pokemon\"></pokemon-form>\n  ",
+            template: "\n    <h2 class=\"header center\">Editer {{ pokemon?.name }}</h2>\n\t\t<p class=\"center\">\n\t\t\t<img *ngIf=\"pokemon\" [src]=\"pokemon.picture\"/>\n\t\t</p>\n    <pokemon-form [pokemon]=\"pokemon\"></pokemon-form>\n  "
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute,
             pokemons_service_1.PokemonsService])

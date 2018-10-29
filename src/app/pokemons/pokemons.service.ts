@@ -28,6 +28,18 @@ export class PokemonsService {
       
     }
 
+    searchPokemons(term: string): Observable<Pokemon[]> {
+      if(!term.trim()) {
+        return of([]);        
+      }
+
+      return this.http.get<Pokemon[]>(`${this.pokemonUrl}/?name=${term}`).pipe(
+        tap(_ => this.log(`found pokemons matching "${term}"`)),
+        catchError(this.handleError<Pokemon[]>('searchPokemons',[]))
+      );
+      
+    }
+
     // Retourne le pokémon avec l'identifiant passé en paramètre
     deletePokemon(pokemon: Pokemon): Observable<Pokemon>  {
       

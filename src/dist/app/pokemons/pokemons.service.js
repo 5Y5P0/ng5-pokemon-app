@@ -29,6 +29,13 @@ var PokemonsService = (function () {
             return of_1.of(result);
         };
     };
+    PokemonsService.prototype.searchPokemons = function (term) {
+        var _this = this;
+        if (!term.trim()) {
+            return of_1.of([]);
+        }
+        return this.http.get(this.pokemonUrl + "/?name=" + term).pipe(operators_1.tap(function (_) { return _this.log("found pokemons matching \"" + term + "\""); }), operators_1.catchError(this.handleError('searchPokemons', [])));
+    };
     // Retourne le pokémon avec l'identifiant passé en paramètre
     PokemonsService.prototype.deletePokemon = function (pokemon) {
         var _this = this;

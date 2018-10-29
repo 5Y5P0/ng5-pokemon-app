@@ -5,6 +5,7 @@ import { Pokemon } from './pokemon';
 import { Router } from '@angular/router';
 
 import { PokemonsService } from './pokemons.service'
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'listPokemon',
@@ -20,7 +21,10 @@ constructor (private  router: Router, private pokemonsService: PokemonsService) 
 }
 
   ngOnInit() {
-    this.pokemons = this.pokemonsService.getPokemons();
+    
+    this.pokemonsService.getPokemons()
+    .subscribe(pokemons => this.pokemons = pokemons);
+    
   }
 
   selectPokemon(pokemon: Pokemon) {

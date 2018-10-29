@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Pokemon } from './pokemon';
 import { PokemonsService } from './pokemons.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'edit-pokemon',
@@ -22,8 +23,12 @@ export class EditPokemonComponent implements OnInit {
     private pokemonsService: PokemonsService) {}
 
   ngOnInit(): void {
+    
     let id = +this.route.snapshot.params['id'];
-    this.pokemon = this.pokemonsService.getPokemon(id);
+    
+    this.pokemonsService.getPokemon(id)
+    .subscribe(pokemon => this.pokemon = pokemon);
+    
   }
 
 }

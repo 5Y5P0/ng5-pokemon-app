@@ -20,7 +20,9 @@ var ListPokemonComponent = (function () {
         //let pokemonsService = new PokemonsService(); // NE SURTOUT PAS FAIRE
     }
     ListPokemonComponent.prototype.ngOnInit = function () {
-        this.pokemons = this.pokemonsService.getPokemons();
+        var _this = this;
+        this.pokemonsService.getPokemons()
+            .subscribe(function (pokemons) { return _this.pokemons = pokemons; });
     };
     ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
         console.log("Vous avez cliqué sur " + pokemon.name);

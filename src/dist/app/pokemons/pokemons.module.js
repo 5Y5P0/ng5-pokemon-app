@@ -19,6 +19,7 @@ var edit_pokemon_component_1 = require("./edit-pokemon.component");
 var pokemon_form_component_1 = require("./pokemon-form.component");
 var search_pokemons_component_1 = require("./search-pokemons.component");
 var loader_component_1 = require("../loader.component");
+var auth_guard_service_1 = require("../auth-guard.service");
 var PokemonsModule = (function () {
     function PokemonsModule() {
     }
@@ -39,7 +40,7 @@ var PokemonsModule = (function () {
                 search_pokemons_component_1.PokemonSearchComponent,
                 loader_component_1.LoaderComponent
             ],
-            providers: [pokemons_service_1.PokemonsService]
+            providers: [pokemons_service_1.PokemonsService, auth_guard_service_1.AuthGuard]
         })
     ], PokemonsModule);
     return PokemonsModule;
